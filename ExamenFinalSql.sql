@@ -132,3 +132,24 @@ GO
 ALTER TABLE COMPRADETALLE
     ADD CONSTRAINT COMPRADETALLE_COMPRA FOREIGN KEY (CODCOM) REFERENCES COMPRA (CODCOM)
 GO
+
+CREATE Procedure CLIENTE_P
+(
+	@CODCLI CHAR (4),
+	@NOMCLI varchar (60),
+	@APECLI varchar (80),
+	@EMACLI varchar (80),
+	@CELCLI char (9),
+	@DIRCLI varchar (70),
+	@ESTCLI char(1)
+)
+as
+begin
+-------Inserci�n Stored Procedure CLIENTE -----
+	insert into CLIENTE (CODCLI, NOMCLI, APECLI, EMACLI, CELCLI,DIRCLI,ESTCLI)
+	values ('CL01', 'Juana', 'Campos Ort�z', 'juana.campos@gmail.com', '98748552', 'Av.Miraflores', 'A'),
+('CL02', 'Sof�a', 'Barrios Salcedo', 'sofia.barrios@outlook.com', ' ', 'Jr.Huallga', 'A'),
+('CL03','Claudio', 'P�rez Luna','claudio.perez@outlook.com','984512147','Av.�ibertadores', 'A'),
+('CL04', 'Marcos', '�vila Manco', 'marcos.avila@yahoo.com', '','Calle Huallaga','A')
+go
+
